@@ -20,6 +20,7 @@ int main(void) {
 
     for (;;)
     {
+        led_clear_all();
         led_set(inx, 255);
         inx++;
         inx %= 16;

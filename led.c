@@ -14,6 +14,9 @@ void led_init()
 
     uint8_t txbuf[2];
     uint8_t rxbuf[1];
+    txbuf[0] = 0x00;
+    txbuf[1] = 0x00;
+    i2cMasterTransmitTimeout(&I2CD2, 0x60, txbuf, 2, rxbuf, 0, MS2ST(5));
     txbuf[0] = 0x14;
     txbuf[1] = 0xFF;
     i2cMasterTransmitTimeout(&I2CD2, 0x60, txbuf, 2, rxbuf, 0, MS2ST(5));
